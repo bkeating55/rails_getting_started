@@ -32,9 +32,9 @@ class ArticlesController < ApplicationController
       redirect_to @article
     else
       render 'edit'
-    end
+  end
 
-  def destory
+  def destroy
     @article = Article.find(params[:id])
     @article.destroy
 
@@ -46,5 +46,4 @@ class ArticlesController < ApplicationController
     def article_params
       params.require(:article).permit(:title, :text)
     end
-end
 end
